@@ -1,0 +1,10 @@
+While this mode should work for any SuSy based course, it has only
+being tested on MC102, hence the name.
+
+This mode simplifies the tedious work of grading code for TAs at any
+university using SuSy, which, AFAIK, is only UNICAMP. Once configured,
+this mode enables, with single keystrokes, viewing a student's code,
+its SuSy generated results page, compiling and testing the code
+locally against the reference homework zip, and grade it based on
+pre-defined criteria. Also, it can generate an html report with the
+code.

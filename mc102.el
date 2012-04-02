@@ -20,7 +20,7 @@
 
 ;;; Commentary:
 
-;;
+;; Mode for simplified SuSy (UNICAMP) based courses grading.
 
 ;;; Code:
 
@@ -116,8 +116,8 @@
   (file-name-as-directory (apply 'rl/--join-path path args)))
 
 (defun rl/--unzip-file (archive target)
-  (call-process "unzip" nil nil  nil archive
-                "-d" target))
+  (call-process "unzip" nil nil nil (expand-file-name archive)
+                "-d" (expand-file-name target)))
 
 (defun rl/mc102--find-code-fullpath (student)
   (car (directory-files
@@ -193,8 +193,8 @@
 (defun rl/mc102-generate-web-report()
   (interactive)
   (let* ((website-dir (rl/--join-path
-                       rl/mc102-website-dir "lab"
-                       rl/mc102--current-homework))
+                       rl/mc102-website-dir
+                       (concat "lab" rl/mc102--current-homework)))
          (grade-file (rl/--join-path website-dir "notas.json")))
     (unless (file-exists-p website-dir)
       (rl/mc102--create-grade-dir website-dir))
