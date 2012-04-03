@@ -99,6 +99,8 @@
     (define-key keymap "v" 'rl/mc102--view-grade-file-at-point)
     (define-key keymap "=" 'rl/mc102--grade-file-at-point)
     (define-key keymap (kbd "RET") 'rl/mc102--open-at-point)
+    (define-key keymap (kbd "SPC") 'scroll-other-window)
+    (define-key keymap (kbd "DEL") 'scroll-other-window-down)
     keymap))
 
 ;; (setq rl/mc102-mode-map (rl/mc102--make-mode-map))
